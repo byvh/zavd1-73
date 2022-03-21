@@ -7,16 +7,17 @@ public class Main {
         System.out.println("max="+x.maxA());
           x = new A(2,4,7);
         System.out.println("max="+x.maxA());
-        B y = new B(9,4,2,1);
+        B y = new B(8,4,2,1);
         System.out.println("max="+y.maxB());
-            y = new B(4,9,2,1);
+            y = new B(4,8,2,1);
         System.out.println("max="+y.maxB());
-            y = new B(4,2,9,1);
+            y = new B(4,2,8,1);
         System.out.println("max="+y.maxB());
-            y = new B(4,2,1,9);
+            y = new B(4,2,1,8);
         System.out.println("max="+y.maxB());
     }
 }
+// суперклас
 class A{
     int a1,a2,a3;
     A(){}
@@ -45,8 +46,8 @@ class B extends A{
         this.a4=a4;
     }
     int maxB(){     // пошук max
-        int max=this.maxA();
-        max=max>this.a4?max:this.a4;
-        return max;
+        //int max=this.maxA();
+        //max=max>this.a4?max:this.a4;
+        return Math.max(this.maxA(),this.a4);
     }
 }
